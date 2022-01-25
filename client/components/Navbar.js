@@ -8,26 +8,26 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      <h1>C-Sweet</h1>
+    <div className="nav-background">
+      <h1>Budget Analysis - Exploring Victory</h1>
       <nav>
         {isLoggedIn ? (
-          <div>
+          <div className="navbar">
             {/* The navbar will show these links after you log in */}
             <Link to="/home">Home</Link>
+            <Link to="/expensehistory">Expense History</Link>
             <a href="#" onClick={() => dispatch(logout())}>
               Logout
             </a>
           </div>
         ) : (
-          <div>
+          <div className="navbar">
             {/* The navbar will show these links before you log in */}
             <Link to="/login">Login</Link>
             <Link to="/signup">Sign Up</Link>
           </div>
         )}
       </nav>
-      <hr />
     </div>
   );
 };

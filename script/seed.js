@@ -2,7 +2,7 @@
 
 const {
   db,
-  models: { User },
+  models: { User, Expense },
 } = require("../server/db");
 
 /**
@@ -15,16 +15,97 @@ async function seed() {
 
   // Creating Users
   const users = await Promise.all([
-    User.create({ username: "cody", password: "123", firstName: "Cody" }),
-    User.create({ username: "murphy", password: "123", firstName: "Murph" }),
+    User.create({
+      budget: 5000,
+      username: "cody",
+      password: "123",
+      email: "cody@hotmail.com",
+    }),
+    User.create({
+      budget: 2500,
+      username: "nicole",
+      password: "123",
+      email: "nd13@gmail.com",
+    }),
+  ]);
+
+  // Creating Expenses
+  const expenses = await Promise.all([
+    Expense.create({
+      name: "ConEd",
+      month: "December",
+      amount: 100,
+      type: "Utilities",
+      userId: 1,
+    }),
+    Expense.create({
+      name: "Rent",
+      month: "December",
+      amount: 500,
+      type: "Rent",
+      userId: 1,
+    }),
+    Expense.create({
+      name: "Dinner Date",
+      month: "December",
+      amount: 150,
+      type: "Food",
+      userId: 1,
+    }),
+    Expense.create({
+      name: "Miami Trip",
+      month: "January",
+      amount: 200,
+      type: "Travel",
+      userId: 1,
+    }),
+    Expense.create({
+      name: "Verizon Fios",
+      month: "January",
+      amount: 40,
+      type: "Utilities",
+      userId: 1,
+    }),
+    Expense.create({
+      name: "Rent",
+      month: "January",
+      amount: 300,
+      type: "Rent",
+      userId: 1,
+    }),
+    Expense.create({
+      name: "Trader Joes",
+      month: "January",
+      amount: 70,
+      type: "Food",
+      userId: 1,
+    }),
+    Expense.create({
+      name: "Train Ticket",
+      month: "January",
+      amount: 17,
+      type: "Travel",
+      userId: 1,
+    }),
   ]);
 
   console.log(`seeded ${users.length} users`);
+  console.log(`seeded ${expenses.length} expenses`);
   console.log(`seeded successfully`);
   return {
     users: {
       cody: users[0],
-      murphy: users[1],
+      nicole: users[1],
+    },
+    expenses: {
+      expense1: expenses[0],
+      expense2: expenses[1],
+      expense3: expenses[2],
+      expense4: expenses[3],
+      expense5: expenses[4],
+      expense6: expenses[5],
+      expense7: expenses[6],
+      expense8: expenses[7],
     },
   };
 }

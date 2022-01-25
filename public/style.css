@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  margin: 0;
 }
 
 a {
@@ -12,10 +13,81 @@ label {
 
 nav a {
   display: inline-block;
-  margin: 1em;
 }
 
 form div {
   margin: 1em;
   display: inline-block;
+}
+
+.expense {
+  border: double teal;
+  border-radius: 5px;
+  background-color: #bcf5e7;
+  padding: 5px;
+  justify-content: space-around;
+  height: 200px;
+  width: 290px;
+  margin: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: orange;
+  color: white;
+  text-align: center;
+  justify-content: space-around;
+}
+
+.left {
+  text-align: left;
+}
+
+.pie {
+  height: 50%;;
+  width: 50%;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+}
+
+.warning {
+  background-color: orange;
+  color: white;
+  margin: 5px;
+}
+
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  display: flex;
+  background-color: tomato
+}
+
+.navbar a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.navbar a:hover {
+  background-color: #bcf5e7;
+  color: black;
+}
+
+.nav-background {
+  background-color: LightBlue;
 }

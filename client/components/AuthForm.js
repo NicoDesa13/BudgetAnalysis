@@ -20,8 +20,8 @@ const AuthForm = ({ name, displayName }) => {
       const formName = evt.target.name;
       const username = evt.target.username.value;
       const password = evt.target.password.value;
-      const firstName = evt.target.firstName.value;
-      dispatch(authenticate(username, password, formName, firstName));
+      const email = evt.target.email.value;
+      dispatch(authenticate(username, password, formName, email));
     }
   };
   if (displayName === "Login") {
@@ -58,10 +58,10 @@ const AuthForm = ({ name, displayName }) => {
             <input name="username" type="text" />
           </div>
           <div>
-            <label htmlFor="firstName">
-              <small>First Name</small>
+            <label htmlFor="email">
+              <small>Email</small>
             </label>
-            <input name="firstName" type="text" />
+            <input name="email" type="text" />
           </div>
           <div>
             <label htmlFor="password">
